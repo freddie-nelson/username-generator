@@ -1,5 +1,5 @@
 {
-    "name": "username-generator",
+    "name": "better-username-generator",
     "version": "1.0.0",
     "main": "dist/index.min.js",
     "module": "dist/index.esm.js",

@@ -1,5 +1,5 @@
 <h1 style="display: flex; justify-content: space-between; align-items: center;">
-  🔥 Username Generator 🔥 
+  🔥 Better Username Generator 🔥 
   <a style="color: #EA005E; text-decoration: underline; font-size: 28px;" href="https://github.com/freddie-nelson/username-generators/stargazers">Become a Stargazer</a>
 </h1>
 
