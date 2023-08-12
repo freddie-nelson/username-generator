@@ -219,7 +219,7 @@ function placeholderToWord(placeholder: Placeholder, words: string[]) {
  * @param template The template to use for generating the username.
  * @returns The generated username.
  */
-function generateUsername(template: string) {
+export function generateUsername(template: string) {
     let s = "";
 
     const placeholders = extractPlaceholders(template);
@@ -248,6 +248,3 @@ function generateUsername(template: string) {
 
     return s;
 }
-
-const u = generateUsername("{{firstname:all}}.{{noun}}.{{number:100:999}}");
-console.log(u);
