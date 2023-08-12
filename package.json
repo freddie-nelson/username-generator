@@ -1,6 +1,6 @@
 {
     "name": "better-username-generator",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "main": "dist/index.min.js",
     "module": "dist/index.esm.js",
     "author": "Freddie Nelson <freddie0208@hotmail.com> (https://freddienelson.co.uk)",
