@@ -18,13 +18,22 @@ function title(words: string[], gender: "m" | "f" | "all" = "all") {
     const maleTitles = ["mr", "dr"];
     const femaleTitles = ["mrs", "ms", "miss", "dr"];
 
-    return getRandomItem(
+    const chosen =
         gender === "all"
             ? [...maleTitles, ...femaleTitles.filter((t) => t !== "dr")]
             : gender === "m"
             ? maleTitles
-            : femaleTitles,
-    );
+            : femaleTitles;
+    const filtered = chosen.filter((t) => !words.includes(t));
+
+    return getRandomItem(filtered.length === 0 ? chosen : filtered);
+}
+
+function prefix(words: string[]) {
+    const prefixes = ["the", "a", "an"];
+    const filtered = prefixes.filter((p) => !words.includes(p));
+
+    return getRandomItem(filtered.length === 0 ? prefixes : filtered);
 }
 
 function adjective(words: string[]) {
@@ -59,7 +68,8 @@ export type PlaceholderType =
     | "firstname"
     | "lastname"
     | "number"
-    | "title";
+    | "title"
+    | "prefix";
 
 const validPlaceholders: PlaceholderType[] = [
     "adj",
@@ -68,6 +78,7 @@ const validPlaceholders: PlaceholderType[] = [
     "lastname",
     "number",
     "title",
+    "prefix",
 ];
 
 export interface Placeholder {
@@ -186,6 +197,9 @@ function placeholderToWord(placeholder: Placeholder, words: string[]) {
         case "title":
             word = title(words);
             break;
+        case "prefix":
+            word = prefix(words);
+            break;
         default:
             throw new Error("Invalid placeholder.");
     }
@@ -208,6 +222,7 @@ function placeholderToWord(placeholder: Placeholder, words: string[]) {
  * - `{{lastname}}` - A random last name.
  * - `{{number:min:max}}` - A random number between `min` and `max`.
  * - `{{title:gender}}` - A random title. gender can be `m`, `f` or `all`.
+ * - `{{prefix}}` - A random prefix.
  *
  * An example template could be `{{adj}}{{noun}}{{number:100:999}}`.
  *

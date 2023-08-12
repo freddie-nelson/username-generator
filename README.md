@@ -39,6 +39,7 @@ The following placeholders are available:
 -   `{{lastname}}` - A random last name.
 -   `{{number:min:max}}` - A random number between `min` and `max`.
 -   `{{title:gender}}` - A random title. gender can be `m`, `f` or `all`.
+-   `{{prefix}}` - A random prefix.
 
 An example template could be `"{{adj}}{{noun}}{{number:100:999}}"`.
 
