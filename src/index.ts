@@ -118,7 +118,7 @@ function extractPlaceholders(template: string) {
                 throw new Error("Missing data for placeholder.");
 
             if (placeholder.includes(":")) {
-                let temp = placeholder.split(":");
+                const temp = placeholder.split(":");
                 placeholder = temp[0];
 
                 if (placeholder === "number" && temp.length === 3) {
